@@ -4,6 +4,28 @@ from bokeh.models   import LinearAxis, Range1d
 from bokeh.driving  import count
 import random
 
+# hello.py 
+
+from bokeh.io import curdoc
+from bokeh.layouts import column
+from bokeh.models.widgets import TextInput, Button, Paragraph
+
+# create some widgets
+button = Button(label="Say HI")
+input = TextInput(value="Bokeh")
+output = Paragraph()
+
+# add a callback to a widget
+def update():
+    output.text = "Hello, " + input.value
+button.on_click(update)
+
+# create a layout for everything
+layout = column(button, input, output)
+
+# add the layout to curdoc
+curdoc().add_root(layout)
+
 def readUpdates(filename):
     updates = {}
     with open(filename, 'r') as infile:
@@ -19,7 +41,7 @@ def extrapolate(tweets):
     return tweets*99+random.randint(0,99)
 
 def getPlot(title):
-    p = figure(plot_height=200, plot_width=400, min_border=40, toolbar_location=None, title=title)
+    p = figure(plot_height=400, plot_width=800, min_border=40, toolbar_location=None, title=title)
     p.background_fill_color = "#515052"          # Background color
     p.title.text_color = "#333138"               # Title color
     p.title.text_font = "helvetica"              # Title font
@@ -83,8 +105,8 @@ def visualize(coins, seconds, path):
 
 # Make sure these variables are consistent with streaming.py
 tickers = ['TSLA','SNAP','AAPL','AMZN']
-refresh = 30
-path = "/Users/Anthony/Desktop/Data/"
+refresh = 5
+path = "/Users/mrudulavysyaraju/Desktop/410-Final-Project/data"
 
 visualize(tickers, refresh, path)
 

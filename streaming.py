@@ -206,10 +206,10 @@ AMZN = ['AMZN', 'Amazon']
 # Variables
 tickers = [TSLA,SNAP,AAPL,AMZN]  # Used for identification purposes
 queries =  TSLA+SNAP+AAPL+AMZN   # Filters tweets containing one or more query 
-refresh = 30                     # Process and log data every 30 seconds
+refresh = 5                     # Process and log data every 30 seconds
 
 # Create a folder to collect logs and temporary files
-path = "data/"
+path = "/Users/mrudulavysyaraju/Desktop/410-Final-Project/data"
 
 streaming(credentials, tickers, queries, refresh, path, \
 realtime=True, logTracker=True, logTweets=True, logSentiment=True, debug=True)
