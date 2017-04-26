@@ -78,3 +78,21 @@ def visualize(coins, seconds, path):
     root = column([r for r in rows])
     curdoc().add_root(root)
     curdoc().add_periodic_callback(update, milliseconds)
+    
+
+
+# Make sure these variables are consistent with streaming.py
+tickers = ['TSLA','SNAP','AAPL','AMZN']
+refresh = 30
+path = "/Users/Anthony/Desktop/Data/"
+
+visualize(tickers, refresh, path)
+
+'''
+Steps to run local bokeh server
+1. Make sure streaming.py is running...
+2. Traverse in console to the directory containing visualize.py
+3. python -m bokeh serve --show visualize.py
+'''
+
+# Note: Volume is the thick blue line while sentiment is the thin white line

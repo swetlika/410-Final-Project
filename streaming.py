@@ -189,3 +189,27 @@ def streaming(credentials, coins, queries, refresh, path, realtime=False, logTra
         time.sleep((15*60)+1) # Wait at least 15 minutes before restarting listener
 
         # ---------------------------------------------
+
+# Credentials to access Twitter API 
+API_KEY = '3fXxn0WxnrTbyOuImMsrgmnLH'
+API_SECRET = '8E8G4h44Hcmzs3Qyby3dITjneUONMTtWOJqwrnf13zwd5wCwCf'
+ACCESS_TOKEN = '8E8G4h44Hcmzs3Qyby3dITjneUONMTtWOJqwrnf13zwd5wCwCf'
+ACCESS_TOKEN_SECRET = 'IyDnUCcXgXwCYsxgyn3KVE0TFcN1qTelzO1KevT74rmCE'
+credentials = [API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET]
+
+# First element must be ticker/name, proceeding elements are extra queries
+TSLA = ['TSLA', 'Tesla']
+SNAP = ['SNAP', 'Snapchat']
+AAPL = ['AAPL', 'Apple']
+AMZN = ['AMZN', 'Amazon']
+
+# Variables
+tickers = [TSLA,SNAP,AAPL,AMZN]  # Used for identification purposes
+queries =  TSLA+SNAP+AAPL+AMZN   # Filters tweets containing one or more query 
+refresh = 30                     # Process and log data every 30 seconds
+
+# Create a folder to collect logs and temporary files
+path = "data/"
+
+streaming(credentials, tickers, queries, refresh, path, \
+realtime=True, logTracker=True, logTweets=True, logSentiment=True, debug=True)
