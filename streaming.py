@@ -193,7 +193,7 @@ def streaming(credentials, coins, queries, refresh, path, realtime=False, logTra
 # Credentials to access Twitter API 
 API_KEY = '3fXxn0WxnrTbyOuImMsrgmnLH'
 API_SECRET = '8E8G4h44Hcmzs3Qyby3dITjneUONMTtWOJqwrnf13zwd5wCwCf'
-ACCESS_TOKEN = '8E8G4h44Hcmzs3Qyby3dITjneUONMTtWOJqwrnf13zwd5wCwCf'
+ACCESS_TOKEN = '839716001126174720-pRfX7PE7Mru8fnep6FaPbqvdYZtyUvj'
 ACCESS_TOKEN_SECRET = 'IyDnUCcXgXwCYsxgyn3KVE0TFcN1qTelzO1KevT74rmCE'
 credentials = [API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET]
 
