@@ -97,9 +97,9 @@ class CoinListener(tweepy.StreamListener):
 
         # Print to console
         if self.debug:
-            print("---%s---" % time.strftime('%H:%M:%S'))
+            print("%s" % time.strftime('%H:%M:%S'))
             for coin in self.coins:
-                print("%s Volume: %s" % (coin[0], tempTracker['Volume'][coin[0]]))
+                #print("%s Volume: %s" % (coin[0], tempTracker['Volume'][coin[0]]))
                 print("%s Sentiment: %s" % (coin[0], tempTracker['Sentiment'][coin[0]]['avg']))
             print('\n')
 
@@ -202,14 +202,16 @@ TSLA = ['TSLA', 'Tesla']
 SNAP = ['SNAP', 'Snapchat']
 AAPL = ['AAPL', 'Apple']
 AMZN = ['AMZN', 'Amazon']
+UAL = ['UAL', 'United']
 
 # Variables
-tickers = [TSLA,SNAP,AAPL,AMZN]  # Used for identification purposes
-queries =  TSLA+SNAP+AAPL+AMZN   # Filters tweets containing one or more query 
+tickers = [TSLA,SNAP,AAPL,AMZN,UAL]  # Used for identification purposes
+queries =  TSLA+SNAP+AAPL+AMZN+UAL   # Filters tweets containing one or more query 
 refresh = 5                     # Process and log data every 30 seconds
 
 # Create a folder to collect logs and temporary files
-path = "/Users/mrudulavysyaraju/Desktop/410-Final-Project/data"
+#path = "/Users/mrudulavysyaraju/Desktop/410-Final-Project/data"
+path = "/home/nila/Projects/410-Final-Project/data"
 
 streaming(credentials, tickers, queries, refresh, path, \
 realtime=True, logTracker=True, logTweets=True, logSentiment=True, debug=True)
