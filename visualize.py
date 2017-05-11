@@ -30,7 +30,7 @@ path = "/home/nila/Projects/410-Final-Project/data"
 # create some widgets
 output_file("dropdown.html")
 
-menu = [('--Companies--','--Companies--'),
+menu = [('Companies','Companies'),
         ('Amazon','AMZN'),
         ('Apple','AAPL'),
         ('Facebook','FB'),
@@ -43,7 +43,8 @@ menu = [('--Companies--','--Companies--'),
         ('Uber','UBER'),
         ('Yahoo','YHOO')]
 
-tickers = [x[0] for x in menu]
+
+tickers = [x[1] for x in menu]
 
 #dropdown = Dropdown(label="Companies", button_type="warning", menu=menu)
 dropdown = Select(value='--Companies--', options=tickers) 
@@ -106,7 +107,7 @@ def getPlot(title):
     p.title.text_color = "#660066"               # Title color
     p.title.text_font = "helvetica"              # Title font
     p.x_range.follow = "end"                     # Only show most recent window of data
-    p.x_range.follow_interval = 60               # Moving window size
+    #p.x_range.follow_interval = 60               # Moving window size
     p.xaxis.major_tick_line_color = None         # Turn off x-axis major ticks
     p.xaxis.minor_tick_line_color = None         # Turn off x-axis minor ticks
     p.yaxis.major_tick_line_color = None         # Turn off y-axis major ticks

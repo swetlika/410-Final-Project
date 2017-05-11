@@ -198,15 +198,22 @@ ACCESS_TOKEN_SECRET = 'IyDnUCcXgXwCYsxgyn3KVE0TFcN1qTelzO1KevT74rmCE'
 credentials = [API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET]
 
 # First element must be ticker/name, proceeding elements are extra queries
-TSLA = ['TSLA', 'Tesla']
-SNAP = ['SNAP', 'Snapchat']
-AAPL = ['AAPL', 'Apple']
+
 AMZN = ['AMZN', 'Amazon']
-UAL = ['UAL', 'United']
+AAPL = ['AAPL', 'Apple']
+FB = ['FB','Facebook']
+GOOGL = ['GOOGL','Google']
+IBM = ['IBM','IBM']
+MSFT = ['MSFT','Microsoft']
+NVDA = ['NVDA','Nvidia']
+SNAP = ['SNAP','Snapchat']
+TSLA = ['TSLA','Tesla']
+UBER = ['UBER','Uber']
+YHOO = ['YHOO','Yahoo']
 
 # Variables
-tickers = [TSLA,SNAP,AAPL,AMZN,UAL]  # Used for identification purposes
-queries =  TSLA+SNAP+AAPL+AMZN+UAL   # Filters tweets containing one or more query 
+tickers = [AMZN,AAPL,FB,GOOGL,IBM,MSFT,NVDA,SNAP,TSLA,UBER,YHOO]  # Used for identification purposes
+queries = AMZN+AAPL+FB+GOOGL+IBM+MSFT+NVDA+SNAP+TSLA+UBER+YHOO   # Filters tweets containing one or more query 
 refresh = 5                     # Process and log data every 30 seconds
 
 # Create a folder to collect logs and temporary files
